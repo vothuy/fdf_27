@@ -11,6 +11,38 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::group(['prefix' => 'auth', 'namespace'=> 'Auth'], function () {
+
+    Route::get('login', [
+      'uses' => 'AuthController@getLogin',
+      'as' => 'auth.login'
+      ]);
+
+    Route::post('login', [
+      'uses' => 'AuthController@postLogin',
+      'as' => 'auth.login'
+      ]);
+  
+    Route::get('logout', [
+      'uses' => 'AuthController@logout',
+      'as' => 'auth.logout'
+      ]);
+});
+
+Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
+
+      Auth::routes();
+
+      Route::get('/home', 'HomeController@index');
+
+      Route::post('/lang', [
+          'as' => 'switchLang',
+          'uses' => 'LangController@postLang',
+      ]);
+
+      Route::get('/', function () {
+          return view('welcome');
+      });
 });
