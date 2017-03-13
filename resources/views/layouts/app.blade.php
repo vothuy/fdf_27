@@ -49,9 +49,14 @@
                             <li><a href="{{ route('login') }}">{{ trans('label.login')}}</a></li>
                             <li><a href="{{ route('register') }}">{{ trans('label.register')}}</a></li>
                             <li>
-                                {!! Form::open(['url' => route('switchLang'), 'method' => 'post', 'class' => 'form-lang']) !!}
-                                    {!! Form::select('locale', 'this.form.submit()', ['en' => trans('label.lang.en'), 'vi' => trans('label.lang.vi'), 'jp' => trans('label.lang.jp')], null)!!}
-                                {!! Form::close() !!}
+                                <form action="{{ route('switchLang') }}" class="form-lang" method="post">
+                                   <select name="locale" onchange='this.form.submit();'>
+                                        <option value="en">{{ trans('label.lang.en') }}</option>
+                                        <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('label.lang.vi') }}</option>
+                                       <option value="jp"{{ Lang::locale() === 'jp' ? 'selected' : '' }}>{{ trans('label.lang.jp') }}</option>
+                                   </select>
+                                    {{ csrf_field() }}
+                                </form>
                             </li>
                         @else
                             <li class="dropdown">

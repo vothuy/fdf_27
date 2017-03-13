@@ -1,5 +1,6 @@
 <?php
-
+Route::pattern('id','([0-9]+)');
+Route::pattern('slug','(.*)');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +47,8 @@ Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')
           return view('welcome');
       });
 });
+
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::resource('user', 'Admin\UserController');
+  });

@@ -6,7 +6,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('label.login') }}</div>
                 <div class="panel-body">
-                    {!! Form::open(['action' => route('login'), 'method' => 'post', 'class' => 'form-horizontal']) !!}
+                    {!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'url' => url('/login')]) !!}
+                    {!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'action' => 'Admin\UserController@index']) !!}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             {!! Form::label('email', trans('label.email'), ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
