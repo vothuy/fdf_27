@@ -69,6 +69,9 @@
         'please enter email' => 'Please Enter Email',
         'please enter address' => 'Please Enter Address',
         'please enter phone' => 'Please Enter Phone',
+        'desciption' => 'Description',
+        'please enter desciption' => 'Please Enter Desciption',
+        'please enter catename' => 'Please Enter CateName',
         'lang' => [
             'en' => 'English',
             'vi' => 'Tiếng Việt',

@@ -69,6 +69,9 @@
         'please enter email' => 'Vui lòng nhập email',
         'please enter address' => 'Vui lòng nhập address',
         'please enter phone' => 'Vui lòng nhập số điện thoại',
+        'desciption' => 'Mô Tả',
+        'please enter desciption' => 'Vui lòng nhập mô tả',
+        'please enter catename' => 'Vui lòng nhập tên danh mục',
         'lang' => [
             'en' => 'English',
             'vi' => 'Tiếng Việt',
