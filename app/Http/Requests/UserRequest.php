@@ -36,13 +36,13 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '{{ trans('label.please enter name') }}',
-            'name.min' => '{{ trans('label.name must be at least 5 characters') }}',
-            'password.required' => '{{ trans('label.please enter password') }}',
-            'fullname.required' => '{{ trans('label.please enter fullname') }}',
-            'email.required' => '{{ trans('label.please enter email') }}',
-            'address.required' => '{{ trans('label.please enter address') }}',
-            'phone.required' => '{{ trans('label.please enter phone') }}',
+            'name.required' => trans('label.notification.please enter name'),
+            'name.min' => trans('label.notification.name must be at least 5 characters'),
+            'password.required' => trans('label.notification.please enter password'),
+            'fullname.required' => trans('label.notification.please enter fullname'),
+            'email.required' => trans('label.notification.please enter email'),
+            'address.required' => trans('label.notification.please enter address'),
+            'phone.required' => trans('label.notification.please enter phone'),
         ];
     }
 }

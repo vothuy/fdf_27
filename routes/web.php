@@ -51,4 +51,5 @@ Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')
 
 Route::group(['prefix' => 'admin'], function(){
     Route::resource('user', 'Admin\UserController');
+    Route::resource('category', 'Admin\CategoryController');
   });
