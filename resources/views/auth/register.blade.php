@@ -6,7 +6,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('label.register') }}</div>
                 <div class="panel-body">
-                        {!! Form::open(['action' => route('register'), 'method' => 'post', 'class' => 'form-horizontal']) !!}
+                        {!! Form::open(['url' => route('register'), 'method' => 'post', 'class' => 'form-horizontal']) !!}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             {!! Form::label('name', trans('label.name'), ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
