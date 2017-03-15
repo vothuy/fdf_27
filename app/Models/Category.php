@@ -7,24 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
-    protected $table="categories";
+    protected $table = "categories";
 
     protected $fillable = [
-    	'name',
-    	'description',
+        'name',
+        'description',
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function products()
     {
 
-    	return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class);
     }
 
     public function suggests()
     {
 
-    	return $this->hasMany(Suggest::class);
+        return $this->hasMany(Suggest::class);
     }
 }

@@ -9,19 +9,19 @@
     {!! Form::open([ 'method' => 'PUT', 'action' => ['Admin\UserController@update', $user->id ] ]) !!}
         <div class="form-group">
             {!! Form::label('name', trans('label.name'), ['class' => 'control-label']) !!}
-            {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => $user->name]) !!}
+            {!! Form::text('name', $user->name, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('name', trans('label.email'), ['class' => 'control-label']) !!}
-            {!! Form::text('email', old('email'), ['class' => 'form-control', 'placeholder' => $user->email]) !!}
+            {!! Form::text('email', $user->email, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('name', trans('label.fullname'), ['class' => 'control-label']) !!}
-            {!! Form::text('fullname', old('fullname'), ['class' => 'form-control', 'placeholder' => $user->fullname]) !!}
+            {!! Form::text('fullname', $user->fullname, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('name', trans('label.address'), ['class' => 'control-label']) !!}
-            {!! Form::text('address', old('address'), ['class' => 'form-control', 'placeholder' => $user->address]) !!}
+            {!! Form::text('address', $user->address, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('name', trans('label.images'),['class' => 'control-label']) !!}

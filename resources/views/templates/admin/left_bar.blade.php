@@ -17,10 +17,10 @@
             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> {{ trans('label.category') }}<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="#">{{ trans('label.list category') }}</a>
+                    <a href="{{ action('Admin\CategoryController@index') }}">{{ trans('label.list category') }}</a>
                 </li>
                 <li>
-                    <a href="#">{{ trans('label.category add') }}</a>
+                    <a href="{{ action('Admin\CategoryController@create') }}">{{ trans('label.category add') }}</a>
                 </li>
             </ul>
         </li>

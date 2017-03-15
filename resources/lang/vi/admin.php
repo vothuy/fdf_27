@@ -5,6 +5,7 @@
             'addsuccess' => 'Bạn đã thêm thể loại thành công',
             'addsuccess' => 'Bạn đã thêm thành công',
             'fail' => 'Bạn chưa thêm được thể loại',
+            'fail_delete' => 'Bạn không thể xóa được',
             'editsuccess' => 'Bạn đã sửa thể loại thành công',
             'editsuccess' => 'Bạn đã sửa thành công',
             'cateDelete' => 'Bạn đã xóa thể loại thành công',
