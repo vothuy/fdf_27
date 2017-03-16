@@ -1,6 +1,6 @@
 <?php
-Route::pattern('id','([0-9]+)');
-Route::pattern('slug','(.*)');
+Route::pattern('id', '([0-9]+)');
+Route::pattern('slug', '(.*)');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,46 +10,44 @@ Route::pattern('slug','(.*)');
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-
-
-Route::group(['prefix' => 'auth', 'namespace'=> 'Auth'], function () {
+Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
 
     Route::get('login', [
-      'uses' => 'AuthController@getLogin',
-      'as' => 'auth.login'
-      ]);
+        'uses' => 'AuthController@getLogin',
+        'as' => 'auth.login',
+    ]);
 
     Route::post('login', [
-      'uses' => 'AuthController@postLogin',
-      'as' => 'auth.login'
-      ]);
-  
+        'uses' => 'AuthController@postLogin',
+        'as' => 'auth.login',
+    ]);
+
     Route::get('logout', [
-      'uses' => 'AuthController@logout',
-      'as' => 'auth.logout'
-      ]);
+        'uses' => 'AuthController@logout',
+        'as' => 'auth.logout',
+    ]);
 });
 
-Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
+Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function () {
 
-      Auth::routes();
+    Auth::routes();
 
-      Route::get('/home', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
 
-      Route::post('/lang', [
-          'as' => 'switchLang',
-          'uses' => 'LangController@postLang',
-      ]);
+    Route::post('/lang', [
+        'as' => 'switchLang',
+        'uses' => 'LangController@postLang',
+    ]);
 
-      Route::get('/', function () {
-          return view('welcome');
-      });
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
 
-
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin'], function () {
     Route::resource('user', 'Admin\UserController');
     Route::resource('category', 'Admin\CategoryController');
-  });
+    Route::resource('product', 'Admin\ProductController');
+});

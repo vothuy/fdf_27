@@ -28,10 +28,10 @@
             <a href="#"><i class="fa fa-cube fa-fw"></i> {{ trans('label.product') }}<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="#">{{ trans('label.list product') }}</a>
+                    <a href="{{ action('Admin\ProductController@index') }}">{{ trans('label.list product') }}</a>
                 </li>
                 <li>
-                    <a href="#">{{ trans('label.product add') }}</a>
+                    <a href="{{ action('Admin\ProductController@create') }}">{{ trans('label.product add') }}</a>
                 </li>
             </ul>
         </li>
